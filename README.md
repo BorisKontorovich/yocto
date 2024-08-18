@@ -27,8 +27,8 @@ Usage:
 ```$ up```
 1. Connect to container<br>
 ```$ exe```
-1. Use yocto to compile you image inside contianer (see yocto tutorials.)
 1. Configuration files are in ./build/conf  This folder is part of editable configuration that is part of repository. Everything else inside this folder is generated and will be discarded. Idea is that eventually custom setup will be part of submodule.
+1. Use yocto to compile you image inside contianer (see yocto tutorials.)
     To run bitbake
     1. Source oe<br>
     ```$ source ./source/poky/oe-init-build-env ```
