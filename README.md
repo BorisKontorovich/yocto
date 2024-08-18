@@ -29,7 +29,7 @@ Usage:
 ```$ exe```
 1. Use yocto to compile you image inside contianer (see yocto tutorials.)
     To run bitbake
-    1. Source oe<br>
+    1. Source setup script<br>
     ```$ source ./source/poky/oe-init-build-env ```
     1. bitbake<br>
     ```$ bitbake core-image-minimal```
