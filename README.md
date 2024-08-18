@@ -9,13 +9,13 @@ Requirements
 
     ```
     yocto-docker_
-                |_build (This is generated and not in repo)
-                |
-                |_custom (This is custom configuration files, its a git submodule)
-                |        (so your docker has to be updated with proper folder name)
-                |
-                |_source (Contains Poky as git submodule)
-                |_utils (Docker related utilities)
+                 |_build (This is generated and not in repo)
+                 |
+                 |_custom (This is custom configuration files, its a git submodule)
+                 |        (so your docker has to be updated with proper folder name)
+                 |
+                 |_source (Contains Poky as git submodule)
+                 |_utils (Docker related utilities)
     ```
 
 Usage:
