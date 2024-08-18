@@ -2,6 +2,21 @@
 
 Requirements
 1. Need to have docker engine 27.1.1 or later installed.
+1. Clone using
+git clone --recurse-submodules -b main git@github.com:BorisKontorovich/yocto-docker.git
+
+Project folder structure and some explantions:
+
+```
+yocto-docker_
+            |_build (This is generated and not in repo)
+            |
+            |_custom (This is custom configuration files, its a git submodule)
+            |        (so your docker has to be updated with proper folder name)
+            |
+            |_source (Contains Poky as git submodule)
+            |_utils (Docker related utilities)
+```
 
 Usage
 1. Source ./utils/aliases.bash<br>
@@ -23,3 +38,4 @@ Usage
 ```$ exit```
 1. Shutdown container when done<br>
 ```$ dwn```
+
