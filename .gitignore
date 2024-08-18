@@ -6,4 +6,3 @@ Thumbs.db
 
 # Ignore everything in build but keep conf folder
 build/*
-!build/conf
