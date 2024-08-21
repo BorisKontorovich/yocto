@@ -1,13 +1,14 @@
 version: "3.3"
 services:
-  yocto-test:
-    image: yocto-test
+  yocto:
+    image: yocto
     user: dev
-    privileged: true
-    container_name: yocto-test
+    # privileged: true
+    container_name: yocto
     network_mode: host
     build:
       context: .
     tty: true
-    volumes:
-      - ./build:/home/dev/yocto-test/build:rw
+    # volumes:
+    #   - ./build:/home/dev/yocto/build:rw
+    #   - ./custom/yocto-docker-conf:/home/dev/yocto/build:rw

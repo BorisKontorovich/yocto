@@ -6,7 +6,14 @@ EXPOSE 1-65535
 
 RUN apt-get update && apt-get upgrade -y && \
     apt-get install -y chrpath diffstat g++ lz4 \
-    python3-dev bzip2 cpio file gawk git make patch wget locales tar
+    python3-dev bzip2 cpio file gawk git make patch wget locales tar \
+    zstd \
+    xz-utils \
+    python3 \
+    patchelf
+
+    
+
 
 
 # Generate and set the en_US.UTF-8 locale
@@ -20,6 +27,7 @@ RUN update-locale
 # Clean up
 RUN apt-get clean && rm -rf /var/lib/apt/lists/*
 
+###############################################################################
 ARG USERNAME=dev
 ARG USER_UID=1000
 ARG USER_GID=1000
@@ -35,11 +43,14 @@ RUN groupadd --gid $USER_GID $USERNAME \
     && chmod 0440 /etc/sudoers.d/$USERNAME
 
 USER $USERNAME
+###############################################################################
 
-RUN mkdir -p /home/$USERNAME/yocto-test/build/conf && \
-    mkdir -p /home/$USERNAME/yocto-test/source && \
-    mkdir -p /home/$USERNAME/yocto-test/build/tmp/sysroots-uninative
+# RUN mkdir -p /home/$USERNAME/yocto/build/conf && \
+#     mkdir -p /home/$USERNAME/yocto/source && \
+#     mkdir -p /home/$USERNAME/yocto/build/tmp/sysroots-uninative
 
-COPY ./source /home/$USERNAME/yocto-test/source
+RUN mkdir -p /home/$USERNAME/yocto/source
+RUN mkdir -p /home/$USERNAME/yocto/build
+COPY ./source /home/$USERNAME/yocto/source
 
-WORKDIR /home/$USERNAME/yocto-test
+WORKDIR /home/$USERNAME/yocto
