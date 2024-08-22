@@ -1,4 +1,4 @@
-version: "3.3"
+version: "3.8"
 services:
   yocto:
     image: yocto
@@ -9,6 +9,6 @@ services:
     build:
       context: .
     tty: true
-    # volumes:
-    #   - ./build:/home/dev/yocto/build:rw
-    #   - ./custom/yocto-docker-conf:/home/dev/yocto/build:rw
+    volumes:
+      # - ./build:/home/dev/yocto/build:rw
+      - ./custom/yocto-docker-conf:/home/dev/yocto/custom:rw
